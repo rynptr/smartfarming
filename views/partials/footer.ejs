@@ -1,0 +1,232 @@
+<footer class="py-5" id="footer-main">
+        <div class="container">
+          <div class="row align-items-center justify-content-xl-between">
+            <div class="col-xl-12">
+              <div class="copyright text-center text-muted">
+                &copy; 2020 UASPABO - 23220036 LTI ITB 
+              </div>
+    
+          </div>
+        </div>
+    
+          
+          <!-- Modal HTML -->
+        <div id="myModal_form" class="modal fade">
+                <div class="modal-dialog modal-login">
+                    <div class="modal-content">
+                        <div class="modal-header">				
+                            <h5 class="modal-title">Add Data Pegawai</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                           
+                                <div class="form-group">
+                                    <i class="ni ni-badge"></i>
+                                    <input id="nip" class="form-control" placeholder="Nip" rows="3" required="required">					
+                                </div>
+                                <div class="form-group">
+                                    <i class="ni ni-circle-08"></i>
+                                    <input id="nama" class="form-control" placeholder="Nama" rows="3" required="required">					
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-list-ul"></i>
+                                    <select class="form-control" id="jenis_kelamin">
+                                        <option value="">Jenis Kelamin</option>
+                                        <option value="Pria">Pria</option>
+                                        <option value="Wanita">Wanita</option>
+                                    </select> 
+                                </div>
+                                <div class="form-group">
+                                    <i class="ni ni-square-pin"></i>
+                                    <input id="tempat_lahir" class="form-control" placeholder="Tempat Lahir" rows="3" required="required">					
+                                </div>
+                                <div class="form-group">                                    
+                                    <i class="ni ni-calendar-grid-58"></i>
+                                        <input id="tanggal_lahir" data-date-format='yyyy-mm-dd' type="text" class="form-control datepicker" placeholder="Tanggal Selesai (YYYY-MM-DD)" required="required">
+                                    </div>
+                                <div class="form-group">
+                                    <i class="fa fa-envelope-open"></i>
+                                    <input id="alamat" class="form-control" placeholder="Alamat" rows="3" required="required">					
+                                </div><div class="form-group">
+                                    <i class="ni ni-briefcase-24"></i>
+                                    <input id="jabatan" class="form-control" placeholder="Jabatan" rows="3" required="required">					
+                                </div>
+                                <div class="form-group">
+                                    <input type="button" class="btn btn-primary btn-block btn-lg" onclick="post_data_pegawai();" value="Tambahkan Data Pegawai">
+                                </div>
+                            				
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+              <!-- Modal HTML -->
+        <div id="myModal_form_update" class="modal fade">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content">
+                    <div class="modal-header">				
+                        <h5 class="modal-title">Update Data Pegawai</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                       
+                            <div class="form-group">
+                                <i class="ni ni-badge"></i>
+                                <input id="nip_update" class="form-control" placeholder="Nip" rows="3" required="required" readonly>					
+                            </div>
+                            <div class="form-group">
+                                <i class="ni ni-circle-08"></i>
+                                <input id="nama_update" class="form-control" placeholder="Nama" rows="3" required="required">					
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-list-ul"></i>
+                                <select class="form-control" id="jenis_kelamin_update">
+                                    <option value="">Jenis Kelamin</option>
+                                    <option value="Pria">Pria</option>
+                                    <option value="Wanita">Wanita</option>
+                                </select> 
+                            </div>
+                            <div class="form-group">
+                                <i class="ni ni-square-pin"></i>
+                                <input id="tempat_lahir_update" class="form-control" placeholder="Tempat Lahir" rows="3" required="required">					
+                            </div>
+                            <div class="form-group">                                    
+                                <i class="ni ni-calendar-grid-58"></i>
+                                    <input id="tanggal_lahir_update" data-date-format='yyyy-mm-dd' type="text" class="form-control datepicker" placeholder="Tanggal Lahir (YYYY-MM-DD)" required="required">
+                                </div>
+                            <div class="form-group">
+                                <i class="fa fa-envelope-open"></i>
+                                <input id="alamat_update" class="form-control" placeholder="Alamat" rows="3" required="required">					
+                            </div><div class="form-group">
+                                <i class="ni ni-briefcase-24"></i>
+                                <input id="jabatan_update" class="form-control" placeholder="Jabatan" rows="3" required="required">					
+                            </div>
+                            <div class="form-group">
+                                <input type="button" class="btn btn-primary btn-block btn-lg" onclick="update_data_pegawai();" value="Update Pegawai">
+                            </div>
+                                        
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal_info" class="modal fade">
+                <div class="modal-dialog modal-login">
+                    <div class="modal-content">
+                        <div class="modal-header">				
+                            <h5 class="modal-title">Informasi Aplikasi</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body" style="padding:0px;">
+                           
+                               
+                                        <div class="card-header">
+                                          <div class="row align-items-center">
+                                            <div class="col-12">
+                                              <h5 class="mb-0">Login Frontend </h5>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <h5 class="mb-0">Email : admin@gmail.com</h5> 
+                                            <h5 class="mb-0">Password : 12345</h5> 
+                                        </div>
+
+                                        <div class="card-header">
+                                                <div class="row align-items-center">
+                                                  <div class="col-12">
+                                                    <h5 class="mb-0">Url Backend REST API</h5>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        <div class="card-body">
+                                                <h5 class="mb-0">
+                                                    <a href="http://localhost:4000/info_api"  target="_blank">
+                                                    http://localhost:4000/info_api
+                                                    </a>
+                                                </h5> 
+                                            </div>
+                                            
+                          
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+      
+      </footer>
+
+<!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <!-- Argon JS -->
+  <script src="../assets/js/argon.js?v=1.2.0"></script>
+  <script src="../assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <!-- sweetalert-->
+  <script src="../assets/js/scripts.js"></script>
+
+
+  <script>
+
+    $(document).ready(function() {
+        $('#tanggal_lahir').datepicker();
+        
+    });   
+
+  function link_listabsen(){
+      var get_nip = $("#get_nip").val(); 
+      window.location.href = "/listabsen/";
+
+  }
+
+  function link_dashboard(){
+      var get_nip = $("#get_nip").val(); 
+      window.location.href = "/listpegawai/";
+
+  }
+
+  
+
+  function notif_logbook(status){
+
+      var get_nip = $("#get_nip").val(); 
+      var tanggal = GetTodayDate();
+
+    if (status === 'logbook') {
+        Swal.fire({
+            title: 'Kegiatan Harian Terkirim !',
+            icon: 'success',
+            showConfirmButton: false,
+            html:
+                'Anda Berhasil Mengisi Kegiatan Harian Tanggal '+tanggal+'',
+            timer: 2000,
+        })
+        .then(function (result) {
+            window.location.href = "../logbook/"+get_nip;
+        })
+    }else{
+        swal("Error occured !");
+    }  
+  }
+
+
+  </script>
+
