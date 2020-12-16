@@ -328,8 +328,8 @@ function post_data_pegawai(){
       headers: { "Authorization": 'Bearer ' + token },
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawaipria",
       dataType: "json",
-      success: function (rows) {
-          var jumlah_pegawai = rows.jumlah_pegawai; 
+      success: function (data) {
+          var jumlah_pegawai = data.rows[0].jumlah_pegawai; 
           $('#jumlah_pegawai_pria').text(jumlah_pegawai);
       }
   });
@@ -342,8 +342,8 @@ function post_data_pegawai(){
       headers: { "Authorization": 'Bearer ' + token },
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawaiwanita",
       dataType: "json",
-      success: function (rows) {
-          var jumlah_pegawai = rows.jumlah_pegawai; 
+      success: function (data) {
+          var jumlah_pegawai = data.rows[0].jumlah_pegawai; 
           $('#jumlah_pegawai_wanita').text(jumlah_pegawai);
       }
   });
