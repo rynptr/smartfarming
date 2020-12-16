@@ -310,8 +310,8 @@ function post_data_pegawai(){
       headers: { "Authorization": 'Bearer ' + token },
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawai",
       dataType: "json",
-      success: function (rows) {
-          var jumlah_pegawai = rows.jumlah_pegawai; 
+      success: function (data) {
+          var jumlah_pegawai = data.rows.jumlah_pegawai; 
           $('#jumlah_pegawai').text(jumlah_pegawai);
       },
       error: function (jqXHR, textStatus, errorThrown)
