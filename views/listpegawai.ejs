@@ -214,19 +214,19 @@ function load_data(){
     const tbody = $("#tabel_kehadiran tbody");
     var no = 1
     $("#tabel_kehadiran tbody").empty();
-    $.each(data, function(_, obj) {
+    $.each(data, function(_, rows) {
       tr = $("<tr/>");
       tr.append("<td>" + no++ + "</td>")
       //alert(obj.waktu_masuk)
       //$.each(obj, function(_, text) {
-      tr.append("<td>" + obj.nip + "</td>")
-      tr.append("<td>" + obj.nama + "</td>")
-      tr.append("<td>" + obj.jeniskelamin + "</td>")
-      tr.append("<td>" + obj.tempatlahir +", "+ FormatDate(obj.tanggallahir) +"</td>")
+      tr.append("<td>" + rows.nip + "</td>")
+      tr.append("<td>" + rows.nama + "</td>")
+      tr.append("<td>" + rows.jeniskelamin + "</td>")
+      tr.append("<td>" + rows.tempatlahir +", "+ FormatDate(rows.tanggallahir) +"</td>")
       //tr.append("<td>" + obj.alamat + "</td>")
-      tr.append("<td>" + obj.jabatan + "</td>")
+      tr.append("<td>" + rows.jabatan + "</td>")
       //tr.append("<td><i class='ni ni-email-83'></i></td>")
-      tr.append("<td><a class='btn btn-sm btn-success' href='#myModal_form_update' data-toggle='modal' onclick=load_data_pegawai('"+ obj.nip +"');>Edit</a> <a class='btn btn-sm btn-danger' href='#delete' onclick=delete_data_pegawai('"+ obj.id +"');>Delete</a></td>")
+      tr.append("<td><a class='btn btn-sm btn-success' href='#myModal_form_update' data-toggle='modal' onclick=load_data_pegawai('"+ rows.nip +"');>Edit</a> <a class='btn btn-sm btn-danger' href='#delete' onclick=delete_data_pegawai('"+ obj.id +"');>Delete</a></td>")
       //});
       tr.appendTo(tbody);
     });
@@ -329,7 +329,7 @@ function post_data_pegawai(){
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawaipria",
       dataType: "json",
       success: function (rows) {
-          var jumlah_pegawai = rows[0].jumlah_pegawai; 
+          var jumlah_pegawai = rows.jumlah_pegawai; 
           $('#jumlah_pegawai_pria').text(jumlah_pegawai);
       }
   });
@@ -343,7 +343,7 @@ function post_data_pegawai(){
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawaiwanita",
       dataType: "json",
       success: function (data) {
-          var jumlah_pegawai = data[0].jumlah_pegawai; 
+          var jumlah_pegawai = data.jumlah_pegawai; 
           $('#jumlah_pegawai_wanita').text(jumlah_pegawai);
       }
   });
