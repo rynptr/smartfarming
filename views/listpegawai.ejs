@@ -210,11 +210,11 @@ function load_data(){
   $.ajaxSetup({
       headers: { "Authorization": 'Bearer ' + localStorage.getItem('token') },
     });
-  $.getJSON('https://tugaspabo-backend.herokuapp.com/pegawai', null, function(rows) {
+  $.getJSON('https://tugaspabo-backend.herokuapp.com/pegawai', null, function(data) {
     const tbody = $("#tabel_kehadiran tbody");
     var no = 1
     $("#tabel_kehadiran tbody").empty();
-    $.each(rows, function(_, obj) {
+    $.each(data.rows, function(_, obj) {
       tr = $("<tr/>");
       tr.append("<td>" + no++ + "</td>")
       //alert(obj.waktu_masuk)
