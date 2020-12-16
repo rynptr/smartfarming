@@ -311,7 +311,7 @@ function post_data_pegawai(){
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawai",
       dataType: "json",
       success: function (rows) {
-          var jumlah_pegawai = rows[0].jumlah_pegawai; 
+          var jumlah_pegawai = rows.jumlah_pegawai; 
           $('#jumlah_pegawai').text(jumlah_pegawai);
       },
       error: function (jqXHR, textStatus, errorThrown)
