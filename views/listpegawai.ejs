@@ -214,7 +214,7 @@ function load_data(){
     const tbody = $("#tabel_kehadiran tbody");
     var no = 1
     $("#tabel_kehadiran tbody").empty();
-    $.each(data.rows, function(_, obj) {
+    $.each(data, function(_, obj) {
       tr = $("<tr/>");
       tr.append("<td>" + no++ + "</td>")
       //alert(obj.waktu_masuk)
@@ -311,7 +311,7 @@ function post_data_pegawai(){
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawai",
       dataType: "json",
       success: function (data) {
-          var jumlah_pegawai = data.rows[0].jumlah_pegawai; 
+          var jumlah_pegawai = data[0].jumlah_pegawai; 
           $('#jumlah_pegawai').text(jumlah_pegawai);
       },
       error: function (jqXHR, textStatus, errorThrown)
@@ -329,7 +329,7 @@ function post_data_pegawai(){
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawaipria",
       dataType: "json",
       success: function (data) {
-          var jumlah_pegawai = data.rows[0].jumlah_pegawai; 
+          var jumlah_pegawai = data[0].jumlah_pegawai; 
           $('#jumlah_pegawai_pria').text(jumlah_pegawai);
       }
   });
@@ -343,7 +343,7 @@ function post_data_pegawai(){
       url: "https://tugaspabo-backend.herokuapp.com/jumlahpegawaiwanita",
       dataType: "json",
       success: function (data) {
-          var jumlah_pegawai = data.rows[0].jumlah_pegawai; 
+          var jumlah_pegawai = data[0].jumlah_pegawai; 
           $('#jumlah_pegawai_wanita').text(jumlah_pegawai);
       }
   });
