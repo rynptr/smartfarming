@@ -42,9 +42,7 @@ module.exports = function(app) {
         resolve.render("view_pembangunan")
     });
 
-
-    app.route('/listusulan')
-        .get(todoList.usulan);
+    app.route("/listusulan").get(todoList.usulan);
 
 
 };
