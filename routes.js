@@ -38,42 +38,6 @@ module.exports = function(app) {
         resolve.render("view_pembangunan")
     });
 
-    app.route('/login').post(todoList.login);
-
-    app.route('/listusulan')
-        .get(todoList.usulan);
-
-    app.route('/usulan/:id')
-        .get(todoList.findUsulan);
-
-    app.route('/tambah_usulan')
-        .post(todoList.createUsulan);
-
-    app.route('/update_usulan')
-        .put(todoList.updateUsulan);
-
-    app.route('/update_status')
-        .put(todoList.updateStatus);
-
-    app.route('/update_status_pmb')
-        .put(todoList.updateStatus_pmb);
-    
-    app.route('/delete_usulan')
-        .delete(todoList.deleteUsulan);
-
-
-    app.route('/listpembangunan')
-        .get(todoList.pembangunan);
-    
-    app.route('/pembangunan/:id')
-        .get(todoList.findPembangunan);
-
-    app.route('/tambah_pembangunan')
-        .post(todoList.createPembangunan);
-
-
-    app.route('/jumlahusulan').get(todoList.jumlahusulan); 
-    app.route('/jumlahusulanditerima').get(todoList.jumlahusulanditerima); 
-    app.route('/jumlahusulanditolak').get(todoList.jumlahusulanditolak);    
+  
 
 };
