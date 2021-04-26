@@ -7,3 +7,6 @@ exports.index = function(req, res) {
     response.ok("Hello from the Node JS RESTful side!", res)
 };
 
+exports.usulan = function(req, res) {
+    response.ok("Hello from the Node JS RESTful side!", res)
+};
