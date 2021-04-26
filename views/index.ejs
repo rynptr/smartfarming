@@ -106,7 +106,7 @@ function login(){
     }; 
 
     $.ajax({
-        url : "http://localhost:3000/login",
+        url : "../login",
         type: "POST",
         dataType: "json",
         data : formData,
@@ -140,7 +140,7 @@ function login(){
             timer: 2000,
         })
         .then(function (result) {
-            window.location.href = "http://localhost:3000/monitoring/";
+            window.location.href = "../monitoring/";
         })
     }else{
         swal("Error occured !");
