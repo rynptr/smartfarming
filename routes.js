@@ -42,8 +42,6 @@ module.exports = function(app) {
         resolve.render("view_pembangunan")
     });
 
-    app.route('/login').post(todoList.login);
-
     app.route('/listusulan')
         .get(todoList.usulan);
 
