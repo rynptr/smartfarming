@@ -1,5 +1,25 @@
 
 
+
+
+    function notif(status,get_id){
+
+        if (status === 'success-message') {
+          Swal.fire({
+              title: 'Data Rencana Pembangunan Telah Diusulkan !',
+              icon: 'success',
+              showConfirmButton: false,
+              html:
+                  'Data Rencana Pembangunan',
+              timer: 2000,
+          })
+          .then(function (result) {
+              window.location.href = "../pembangunan/";
+          })
+        }else{
+          swal("Error occured !");
+        }  
+    }
   
 
   function GetTodayDate() {
@@ -26,18 +46,6 @@
     if (day.length < 2) day = '0' + day;
 
     return [day, month, year].join('-');
- }
-
- function FormatDateYMD(date) {
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
  }
  
  
@@ -94,43 +102,6 @@
  }
  
  
-function post_data_absen(nip,nama){
-    var lat = $("#latitude").val();
-    var long = $("#longitude").val(); 
-        
-    var now = new Date(Date.now());
-    var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-    var tanggal = GetTodayDate();
-
-    var formData = {
-        nip:nip,
-        nama:nama,
-        keterangan:"WFH",
-        tanggal:tanggal,
-        waktu_masuk:time,
-        waktu_pulang:time,
-        lat:lat,
-        lon:long,
-        image:"image",
-    }; 
-    
-    $.ajax({
-        url : "https://sikadir.k-7.monster/absen",
-        type: "POST",
-        dataType: "json",
-        data : formData,
-        success: function(data, textStatus, jqXHR)
-        {
-            notif('success-message',nip,nama,tanggal,time)
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            console.log(jqXHR);
-            alert('fail' + textStatus.code);
-        }
-    });
- }
 
  function update_data_absen(nip,nama){
     var lat = $("#latitude").val();

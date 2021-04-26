@@ -103,7 +103,7 @@ body
 
 #body_front
 {
-    background: url("../img/bg2.jpg") no-repeat center center; 
+    background: url("../img/jp.jpg") no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -24173,12 +24173,12 @@ button.bg-lighter:focus
 
 .bg-gradient-primary
 {
-    background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    /*background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;*/
 }
 
 .bg-gradient-secondary
 {
-    background: linear-gradient(87deg, #f7fafc 0, #f7f8fc 100%) !important;
+    /*background: linear-gradient(87deg, #f7fafc 0, #f7f8fc 100%) !important;*/
 }
 
 .bg-gradient-success
@@ -24529,12 +24529,12 @@ button.section-darker:focus
 
 .bg-gradient-primary
 {
-    background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    /*background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;*/
 }
 
 .bg-gradient-secondary
 {
-    background: linear-gradient(87deg, #f7fafc 0, #f7f8fc 100%) !important;
+    /*background: linear-gradient(87deg, #f7fafc 0, #f7f8fc 100%) !important;*/
 }
 
 .bg-gradient-success
