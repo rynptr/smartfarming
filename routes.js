@@ -43,5 +43,8 @@ module.exports = function(app) {
     });
 
 
- 
+    app.route('/listusulan')
+        .get(todoList.usulan);
+
+
 };
