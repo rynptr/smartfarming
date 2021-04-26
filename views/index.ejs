@@ -118,7 +118,7 @@ function login(){
     }; 
 
     $.ajax({
-        url : "https://tugaspabo-backend.herokuapp.com/login",
+        url : "http://localhost:3000/login",
         type: "POST",
         dataType: "json",
         data : formData,
@@ -150,7 +150,7 @@ function login(){
             timer: 2000,
         })
         .then(function (result) {
-            window.location.href = "https://tugaspabo-frontend.herokuapp.com/listpegawai/";
+            window.location.href = "http://localhost:3000/listpegawai/";
         })
     }else{
         swal("Error occured !");

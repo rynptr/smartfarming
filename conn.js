@@ -1,14 +1,14 @@
-/*var mysql = require('mysql');
+var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "e-absen"
+  host: "rds-mysql-10mintutorial.cswuo5xfikwv.us-east-1.rds.amazonaws.com",
+  user: "admin",
+  password: "$Rynptr2302",
+  database: "db_siperem"
 });
 
 con.connect(function (err){
     if(err) throw err;
 });
 
-module.exports = con;*/
+module.exports = con;
