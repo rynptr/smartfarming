@@ -10,6 +10,10 @@ module.exports = function(app) {
         resolve.render("index")
     });
 
+    app.get("/listpegawai/", function (request, resolve) {
+        resolve.render("listpegawai")
+    });
+
     app.get("/info_api", function (request, resolve) {
         resolve.render("info_api")
     });
