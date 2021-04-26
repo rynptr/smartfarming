@@ -47,38 +47,4 @@
       </div>
 
  <script>
-function post_data_ijin(){
-    var get_nip = $("#get_nip").val(); 
-    var jenis_ijin = $("#jenis_ijin").val(); 
-    var tanggal_dari = $("#tanggal_dari").val(); 
-    var tanggal_sampai = $("#tanggal_sampai").val(); 
-    var alasan = $('#alasan').val();
-   
-    var formData = {
-        nip:get_nip,
-        tanggal_dari:tanggal_dari,
-        tanggal_sampai:tanggal_sampai,
-        jenis_ijin:jenis_ijin,
-        alasan:alasan,
-        approve:"0",
-    }; 
-
-    //notif_ijin('ijin');  
-    
-    $.ajax({
-        url : "https://sikadir.k-7.monster/ijin_form",
-        type: "POST",
-        dataType: "json",
-        data : formData,
-        success: function(data, textStatus, jqXHR)
-        {
-            notif_ijin('ijin');  
-        },
-        error: function (jqXHR, textStatus, errorThrown)
-        {
-            console.log(jqXHR);
-            alert('fail' + textStatus.code);
-        }
-    });
- }
  </script>
