@@ -11,8 +11,6 @@ module.exports = function(app) {
     });
     
 
-    app.get("/listpegawai/", function (request, resolve) {
-        resolve.render("listpegawai")
-    });
+    app.route('/login').post(todoList.login);
 
 };
