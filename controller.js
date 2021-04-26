@@ -7,12 +7,3 @@ exports.index = function(req, res) {
     response.ok("Hello from the Node JS RESTful side!", res)
 };
 
-exports.usulan = function(req, res) {
-    connection.query('SELECT * FROM table_usulan', function (error, rows, fields){
-        if(error){
-            console.log(error)
-        } else{
-            response.ok(rows, res)
-        }
-    });
-};
