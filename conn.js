@@ -1,10 +1,11 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "rds-mysql-10mintutorial.cswuo5xfikwv.us-east-1.rds.amazonaws.com",
-  user: "admin",
-  password: "$Rynptr2302",
-  database: "db_siperem"
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "db_smartfarming",
+  timezone: 'Asia/Jakarta'  
 });
 
 con.connect(function (err){

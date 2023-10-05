@@ -1,154 +1,213 @@
-
 <%- include('partials/header'); -%>
-<style>
+<!-- Pre-loader start -->
 
-    #videoElement {
-        top: 0;
-        left:0;
-        width: 443px;
-        height: 400px;
-        background-color: #fff;
-    }
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+	<div class="pcoded-overlay-box"></div>
+	<div class="pcoded-container navbar-wrapper">
+		<nav class="navbar header-navbar pcoded-header">
+			<div class="navbar-wrapper">
+				<div class="navbar-logo">
+					<a class="mobile-menu" id="mobile-collapse" href="#!">
+						<i class="feather icon-menu"></i>
+					</a>
+					<a href="#">
+						<img class="img-fluid" src="../assets/images/logo_simdotam.png" alt="Theme-Logo" style="width: 115px; height: 40px" />
+					</a>
+					<a class="mobile-options">
+						<i class="feather icon-more-horizontal"></i>
+					</a>
+				</div>
+				<div class="navbar-container container-fluid">
+					<ul class="nav-left">
+						<li class="header-search">
+							<div class="main-search morphsearch-search">
+								<div class="input-group">
+									<span class="input-group-addon search-close">
+										<i class="feather icon-x"></i>
+									</span>
+									<!--<input type="text" class="form-control"><span class="input-group-addon search-btn"><i class="feather icon-search"></i></span>-->
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#!" onclick="javascript:toggleFullScreen()">
+								<i class="feather icon-maximize full-screen"></i>
+							</a>
+						</li>
+					</ul>
+					<ul class="nav-right">
+						<li class="header-notification" style="font-weight: bold; font-size: 16px;">Sistem Monitoring Pemberian Nutrisi dan Air Tanaman Cabai</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- Sidebar inner chat end-->
+		<div class="pcoded-main-container">
+			<div class="pcoded-wrapper">
+				
 
-</style>
-<body id="body_front" class="bg-default">
-  <!-- Main content -->
-  <div class="main-content">
-    <!-- Header -->
-    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
-      <div class="container">
-        <div class="header-body text-center mb-7">
-          <div class="row justify-content-center">
-              <div class="col-xl-12 col-lg-6 col-md-8 px-5">
-              
-             
-              <span class="text-lead text-white"></span> 
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-    <!-- Page content -->
-    <div class="container mt--8 pb-5">
-      <div class="row justify-content-end">
-        <div class="col-lg-5 col-md-7" style="margin-bottom: 10px;">
-          <div class="card bg-secondary border-0 mb-0">
-            <div class="card-header bg-transparent pb-5" >
-              <div class="text-muted text-center mt-2 mb-3">
-                  <h2><a class="navbar-brand" href="javascript:void(0)">
-                    <img src="../assets/img/logo.png" class="navbar-brand-img" style="height:50px; width:50px;margin-bottom: 10px">
-                  </a>
-                    <div class="text-center mb-4">
-                        <large>Sistem Perencanaan Pembangunan dan Perawatan Jembatan</large>
-                      </div>
-             
-                    </h2>
-                
-              </div>
-            </div>
-            <div class="card-body px-lg-5 py-lg-5" style="padding-top:25px !important;">
-                <div class="text-center mb-4">
-                   
-                  </div>
-             
-                  <div class="form-group mb-3">
-                    <div class="input-group input-group-merge input-group-alternative">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                      </div>
-                      <input class="form-control" placeholder="Email" type="email" id="email">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group input-group-merge input-group-alternative">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                      </div>
-                      <input class="form-control" placeholder="Password" type="password" id="password">
-                    </div>
-                  </div>
-                  <div class="status" style="text-align:center; color:red;">-</div>
-                  <div class="text-center">
-                      <a class="btn btn btn-warning" href="#myModal_info" data-toggle="modal">Info</a>
-                    <button type="button" class="btn btn-primary my-4" onclick="login();">Sign in</button>
-                  </div>
-           
-              </div>    
-          </div>
-
-        </div>
-
-    
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <%- include('partials/footer'); -%>
-</body>
-</html>
-
-<script>
-$(document).ready(function(){
-
-});  
-
-function login(){
-    var email = $("#email").val(); 
-    var password = $("#password").val(); 
-    
-    var formData = {
-      email:email,
-      password:password,
-    }; 
-
-    $.ajax({
-        url : "../login",
-        type: "POST",
-        dataType: "json",
-        data : formData,
-        success: function(data, textStatus, jqXHR)
-        {
-          
-            
-            console.log('Success!')
-            localStorage.setItem('token', data.token); 
-            notif('login-message'); 
-        },
-        error: function (response)
-        {   
-            $('.status').text(response.responseText);
-            //alert(response.responseText);
-        }
-    });
-
-    //window.location.href = "http://localhost:3000/monitoring/";
- }
-
- function notif(status){
-    if (status === 'login-message') {
-        Swal.fire({
-            title: 'Anda Berhasil Login',
-            icon: 'success',
-            showConfirmButton: false,
-            html:
-                'Email dan Password Anda Diterima..' +
-                '<br><br>Redirecting in 2 seconds...', 
-            timer: 2000,
-        })
-        .then(function (result) {
-            window.location.href = "../monitoring/";
-        })
-    }else{
-        swal("Error occured !");
-    } 
-    
-    
-  }
+				<%- include('partials/sidebar'); -%>
 
 
-</script>
+				<div class="pcoded-content">
+					<div class="pcoded-inner-content">
+						<div class="main-body">
+							<div class="page-wrapper">
+								<div class="page-body">
+									<div class="row">
+										<!-- task, page, download counter  start -->
+										<!--  
+												<div class="col-xl-12 col-md-12">
+													 <div class="card" style="margin-bottom:20px;">
+														 <div class="card-header" style="margin: auto;width: 90%;">
+															 <div class="row">
+																 <div class="col-sm-2" style="max-width :12% !important;padding-right: 0px !important;">
+																	 <label class="col-form-label">
+																		 <h5>Filter Range</h5>
+																	 </label>
+																 </div>
+																 <div class="col-sm-3">
+																	 <select id="act_dropdown" name="select" class="form-control form-control-default" style="color:#000;">
+																		 <option value="daily">Daily</option>
+																		 <option value="weekly">Weekly</option>
+																		 <option value="monthly">Monthly</option>
+																	 </select>
+																 </div>
+																 <div class="col-sm-1" style="max-width :21% !important;padding-right: 0px !important; text-align:center;">
+																	 <label class="col-form-label">
+																		 <h5>until</h5>
+																	 </label>
+																 </div>
+																 <div class="col-sm-3">
+																	 <input id="date_until" type="text" class="form-control" value="
+																																				
+																								<?php echo date("Y-m-d H:i:s"); ?>" style="height: 38px;">
+																 </div>
+																 <div class="col-sm-1">
+																	 <button id="butt_filter" class="btn btn-inverse" style="height: 38px;">Filter</button>
+																 </div>
+															 </div>
+														 </div>
+														 <!--<div class="card-block"><div class="row"><div class="col-xl-12 col-md-12"><select id="act_dropdown" name="select" class="form-control form-control-default"><option value="daily">Daily</option><option value="weekly">Weekly</option><option value="monthly">Monthly</option></select></div></div></div></div></div>-->
 
+										<!--  sale analytics start 
+										<div class="col-xl-12 col-md-12">
+											<div class="card">
+												<div class="card-header">
+													<h5 style="font-weight: bold; ">NUTRITION TANK SENSOR</h5>
+													<hr>
+													<div class="card-header-right">
+														<ul class="list-unstyled card-option">
+															<li>
+																<i class="feather icon-minus minimize-card"></i>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="card-block">
+													<div class="row">
+														<div class="col-xl-4 col-md-6">
+															<div class="card bg-c-yellow order-card">
+																<div class="card-block">
+																	<h6 class="text-white m-b-0" style="font-weight: bold;">TDS (Total Dissolve Solid)</h6>
+																	<h2 class="text-white">
+																		<span id="last-tds-1"><b>-</b> </span>
+																		ppm
+																	</h2>
+																	<p class="text-white m-b-0">
+																		<i class="feather icon-clock text-white f-14 m-r-10"></i>last update : <span id="lastdate_tds-1">-</span>
+																	</p>
+																	<img class="img-fluid" src="../assets/images/dts.png" alt="Theme-Logo" style="width: 50px;height: 50px;position: absolute;top: 20px;right: 10px;" />
+																</div>
+															</div>
+															<div id="plot_tds" style="height: 300px; margin: 0 auto"></div>
+														</div>
+														<div class="col-xl-4 col-md-6">
+															<div class="card bg-c-yellow order-card">
+																<div class="card-block">
+																	<h6 class="text-white m-b-0" style="font-weight: bold;">Volume</h6>
+																	<h2 class="text-white">
+																		<span id="last-volume-1"><b>-</b></span>
+																		 liter
+																	</h2>
+																	<p class="text-white m-b-0">
+																		<i class="feather icon-clock text-white f-14 m-r-10"></i>last update : <span id="lastdate_volume-1">-</span>
+																	</p>
+																	<img class="img-fluid" src="../assets/images/volume.png" alt="Theme-Logo" style="width: 50px;height: 50px;position: absolute;top: 20px;right: 10px;" />
+																</div>
+															</div>
+															<div id="plot_volume" style="height: 300px; margin: 0 auto"></div>
+														</div>
+														<div class="col-xl-4 col-md-6">
+															<div class="card bg-c-yellow order-card">
+																<div class="card-block">
+																	<h6 class="text-white m-b-0" style="font-weight: bold;">pH</h6>
+																	<h2 class="text-white">
+																		<span id="last-ph_tank-1"><b>-</b></span>
+																		 pH
+																	</h2>
+																	<p class="text-white m-b-0">
+																		<i class="feather icon-clock text-white f-14 m-r-10"></i>last update : <span id="lastdate_ph_tank-1">-</span>
+																	</p>
+																	<img class="img-fluid" src="../assets/images/ph.png" alt="Theme-Logo" style="width: 50px;height: 50px;position: absolute;top: 20px;right: 10px;" />
+																</div>
+															</div>
+															<div id="plot_ph_tank" style="height: 300px; margin: 0 auto"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>-->
+
+										<input type="hidden" name="name" id="id_polybag" value="value" />
+
+										<div class="col-xl-12 col-md-12">
+											<div class="card">
+												<div class="card-header" style="border-bottom: 1px solid #eaeaea;">
+													<h5 style="font-weight: bold; ">WEATHER SENSOR</h5>
+												</div>
+
+												<div id="weather_sensor" ></div>
+										 
+											</div>
+										</div>
+										<div class="col-lg-12 col-xl-12">
+										
+
+										
+											
+											<div id="polybag"></div>
+																								 
+										
+
+										 </div>                                             
+										
+											
+										  <div class="col-lg-12 col-xl-12 tab-with-img">
+											<!-- Tab panes -->
+											<div class="tab-content card-block" style="padding: 0px;">
+													<div class="tab-pane active" id="polybag1" role="tabpanel">
+													<div class="col-xl-12 col-md-12" style="padding: 0px;">
+														<div class="card">
+															<div class="card-header" style="border-bottom: 1px solid #eaeaea; text-align:center;">
+																<h5><span class="no_polybag" style="font-weight: bold; color:#000; font-size: 15px;"></span></h5>
+												 
+															</div>
+																	<div id="soil_sensor"></div>
+															</div>
+														</div>
+													</div>
+											</div>   
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer --><%- include('partials/footer'); -%>

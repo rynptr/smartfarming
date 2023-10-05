@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <head>
 	<meta charset="utf-8">
-	<title>REST API SIPEREM</title>
+	<title>REST API MONITORING BRIN x UNPAD</title>
 
 	<style type="text/css">
 
@@ -67,7 +67,7 @@
 <body>
 
 <div id="container">
-	<h1>REST API SIPEREM</h1>
+	<h1>REST API MONITORING BRIN x UNPAD</h1>
 
 	<div id="body">
 		<h4>Petunjuk Penggunaan </h4>
@@ -75,7 +75,7 @@
 <tbody>
 <tr>
 <td width="195">API</td>
-<td width="595">API SIPEREM Kelompok 1 - Mata Kuliah PLTI</td>
+<td width="595">API DATA SENSOR</td>
 </tr>
 <tr>
 <td width="195">Devel</td>
@@ -85,49 +85,26 @@
 </table>
 &nbsp;
 <ul>
- 	<li><h4>Menampilkan Seluruh data Database usulan SIPEREM :</h4></li>
+ 	<li><h4>Menampilkan Seluruh data Database sensor Soil :</h4></li>
 </ul>
 Request :
 
 Method : GET
-url  : http://localhost:3000/listusulan
+url  : http://localhost:3000/data_soil
 
 <ul>
-	<li><h4>Menampilkan Database Data Jembatan berdasrkan ID jembatan:</h4></li>
+	<li><h4>Menampilkan Database Data sensor weather :</h4></li>
 </ul>
 
 Request :
 
 Method : GET
-url  : http://localhost:3000/usulan/[id]
-
+url  : http://localhost:3000/data_weather
 
 <ul>
-    <li><h4>Menambahkan data baru Database usulan perbaikan jembatan :</h4></li>
+	
 </ul>
-Request :
 
-Method : POST
-url  : ttp://localhost:3000/tambahusulan/
-- data : [ tgl_usulan, nama, kota, desa, alamat, status, tahun, lat, lon, path_image, stat]
-
-<ul>
-    <li><h4>Menghapus data Database Usulan perbaikan jembatan:</h4></li>
-</ul>
-Request :
-
-Method : DELETE
-url  : http://localhost:3000/delete_usulan/[id]
-
-<ul>
-    <li><h4>Mengupdate data Database Status Usulan perbaikan jembatan:</h4></li>
-</ul>
-Request :
-
-Method : PUT
-url  : http://localhost:3000/update_status/[id]
-
-<ul>
 </ul>
 
 &nbsp;

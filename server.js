@@ -1,8 +1,11 @@
+
 var express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
     bodyParser = require('body-parser'),
     controller = require('./controller');
+    var http = require('http');
+	var url = require('url') ;
 
 var cors = require('cors');
 app.use(cors());
@@ -18,3 +21,4 @@ routes(app);
 
 app.listen(port);
 console.log('Learn Node JS With Kiddy, RESTful API server started on: ' + port); 
+
