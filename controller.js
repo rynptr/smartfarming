@@ -162,7 +162,7 @@ exports.data_npk = function(req, res) {
     }
 
 
-    connection.query('SELECT * FROM tb_npk WHERE id_sensor = ?',
+    connection.query('SELECT * FROM (SELECT * FROM tb_npk WHERE id_sensor = ? ORDER BY id DESC LIMIT 100) AS sub ORDER BY id ASC;',
     [ id_sensor_npk ],
     function (error, rows, fields){
         if(error){
@@ -208,7 +208,7 @@ exports.data_humidity = function(req, res) {
         var id_sensor_hu = '0'    
     }
     
-            connection.query('SELECT * FROM tb_humidity WHERE id_sensor = ?', 
+            connection.query('SELECT * FROM (SELECT * FROM tb_humidity WHERE id_sensor = ? ORDER BY id DESC LIMIT 100) AS sub ORDER BY id ASC', 
             [ id_sensor_hu ],
             function (error, rows, fields){
                 if(error){
