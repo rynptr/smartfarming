@@ -1,0 +1,162 @@
+<%- include('partials/header'); -%>
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu"></i>
+                        </a>
+                         <a href="#">
+                          <img class="img-fluid" src="../assets/images/logo_simdotam.png" alt="Theme-Logo" style="width: 115px; height: 40px" />
+                        </a>
+                        <a class="mobile-options">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-addon search-close"><i class="feather icon-x"></i></span>
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon search-btn"><i class="feather icon-search"></i></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()">
+                                    <i class="feather icon-maximize full-screen"></i>
+                                </a>
+                            </li>
+                        </ul>
+                     
+                        <ul class="nav-right">
+                             <li class="header-notification" style="font-weight: bold; font-size: 16px;">Sistem Monitoring Pemberian Nutrisi dan Air Tanaman Cabai</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Sidebar chat start -->
+            <div id="sidebar" class="users p-chat-user showChat">
+                <div class="had-container">
+                    <div class="card card_main p-fixed users-main">
+                        <div class="user-box">
+                            <div class="chat-inner-header">
+                                <div class="back_chatBox">
+                                    <div class="right-icon-control">
+                                        <input type="text" class="form-control  search-text" placeholder="Search Friend" id="search-friends">
+                                        <div class="form-icon">
+                                            <i class="icofont icofont-search"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Sidebar inner chat end-->
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                       <%- include('partials/sidebar'); -%>
+                   <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <!-- Page-header start -->
+                                <div class="page-header">
+                                    <div class="row align-items-end">
+                                        <div class="col-lg-8">
+                                            <div class="page-header-title">
+                                                <div class="d-inline">
+                                                    <h4>Lokasi Kegiatan</h4>
+                                                      
+                                                </div>
+                                            </div>
+                                        </div>
+                                  
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                   
+                                    <!-- Page body start -->
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-xl-12">
+                                                <!-- Basic map start -->
+                                                <div class="card">
+                                           
+                                                    <div class="card-block">
+                                                        <div class="row">
+                                                                <div class="col-xl-8 col-md-12">
+                                                                    <iframe width="100%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/en/embed/LMceCWkk1L"></iframe>
+                                                                </div>
+                                                                <div class="col-xl-4 col-md-12">
+                                                                        <div id="map" class="set-map" style="height: 93%; margin-top: 20px;" ></div>
+                                                                </div>
+                                                        </div>
+                                            
+
+                                                    </div>
+                                                <!-- Basic map end -->
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                   
+                       
+                                    </div>
+                                    <!-- Page body end -->
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Footer --><%- include('partials/footer'); -%>
+
+<script type="text/javascript">
+
+                    $( document ).ready(function() {
+                        load_map();
+                    });
+
+          var marker;
+
+                            
+
+         function load_map(){
+                    let mapOptions = {
+                     center:[51.958, 9.141],
+                     zoom:10
+                    }
+                    var map = new L.map('map').setView([-6.91965, 107.77257], 15);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: ''
+                        }).addTo(map);
+
+                    // Target's GPS coordinates.
+                    let marker = new L.Marker([-6.92000, 107.77244]);
+
+                    // Set map's center to target with zoom 14.
+                    marker.addTo(map);
+
+                    }
+                       
+        </script>

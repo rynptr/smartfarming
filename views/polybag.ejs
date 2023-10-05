@@ -1,0 +1,160 @@
+<script>
+$(document).ready(function() {
+        tab_bedeng(1); 
+});
+
+function tab_bedeng(cat){
+      if(cat =='1'){
+        $(".polybag1").show();
+        $(".polybag2").show();
+        $(".polybag3").show();
+        $(".polybag4").show();
+ 
+        $(".polybag5").hide();
+        $(".polybag6").hide();
+        $(".polybag7").hide();
+        $(".polybag8").hide();
+        $(".polybag9").hide();
+        $(".polybag10").hide();
+
+      }else
+      if(cat =='2'){
+
+        $(".polybag1").hide();
+        $(".polybag2").hide();
+        $(".polybag3").hide();
+        $(".polybag4").hide();
+
+        $(".polybag5").show();
+        $(".polybag6").show();
+        $(".polybag7").show();
+
+        $(".polybag8").hide();
+        $(".polybag9").hide();
+        $(".polybag10").hide();
+      }else
+      if(cat =='3'){
+
+        $(".polybag1").hide();
+        $(".polybag2").hide();
+        $(".polybag3").hide();
+        $(".polybag4").hide();
+
+        $(".polybag5").hide();
+        $(".polybag6").hide();
+        $(".polybag7").hide();
+
+        $(".polybag8").show();
+        $(".polybag9").show();
+        $(".polybag10").show(); 
+      }
+    }
+</script>
+<ul class="nav nav-tabs md-tabs" role="tablist">
+                      <li class="nav-item" id="bedeng">
+                        <a class="nav-link active" data-toggle="tab" href="#tds_1" role="tab" onclick="tab_bedeng(1);">TDS Presisi 1 (T1)</a>
+                        <div class="slide"></div>
+                      </li>
+                      <li class="nav-item" id="bedeng">
+                        <a class="nav-link" data-toggle="tab" href="#tds2" role="tab" onclick="tab_bedeng(2);">TDS Presisi 2 (T2)</a>
+                        <div class="slide"></div>
+                      </li>
+                      <li class="nav-item" id="bedeng">
+                        <a class="nav-link" data-toggle="tab" href="#konvensional" role="tab" onclick="tab_bedeng(3);">Konvensional (K)</a>
+                        <div class="slide"></div>
+                      </li>
+                    </ul>
+<div class="tab-content card-block" style="padding:5px;">
+<div class="tab-pane active" id="polybag" role="tabpanel" >
+                      
+
+                      <div class="col-lg-12 col-xl-12 tab-with-img">
+                        <ul class="nav nav-tabs md-tabs img-tabs b-none" role="tablist">
+                          <li class="nav-item polybag1">
+                            <a class="nav-link active" data-toggle="tab" href="#polybag1" role="tab" onclick="polybag('1')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">1</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag2">
+                            <a class="nav-link" data-toggle="tab" href="#polybag2" role="tab" onclick="polybag('2')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">2</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag3">
+                            <a class="nav-link" data-toggle="tab" href="#polybag3" role="tab" onclick="polybag('3')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">3</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag4">
+                            <a class="nav-link" data-toggle="tab" href="#polybag4" role="tab" onclick="polybag('4')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">4</i>
+                              </span>
+                            </a>
+                          </li>
+
+                           <li class="nav-item polybag5">
+                            <a class="nav-link" data-toggle="tab" href="#polybag5" role="tab" onclick="polybag('5')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">5</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag6">
+                            <a class="nav-link" data-toggle="tab" href="#polybag6" role="tab" onclick="polybag('6')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">6</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag7">
+                            <a class="nav-link" data-toggle="tab" href="#polybag7" role="tab" onclick="polybag('7')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">7</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag8">
+                            <a class="nav-link " data-toggle="tab" href="#polybag8" role="tab" onclick="polybag('8')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">8</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag9">
+                            <a class="nav-link" data-toggle="tab" href="#polybag9" role="tab" onclick="polybag('9')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">9</i>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav-item polybag10">
+                            <a class="nav-link" data-toggle="tab" href="#polybag10" role="tab" onclick="polybag('10')">
+                              <img src="../assets/images/sensorcabe.png" class="img-fluid img" alt="" style="border: 0px;">
+                              <span class="quote">
+                                <i class="icofont icofont-quote-left bg-primary">10</i>
+                              </span>
+                            </a>
+                          </li>
+
+                        </ul>                     
+                      </div>
+
+                      </div>
+       
+                  </div>
